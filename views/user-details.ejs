@@ -3,7 +3,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>User-details</title>
+    <title><%=firstname%>'s-details</title>
   </head>
   <body>
     <h1><%=firstname%></h1>
@@ -11,6 +11,12 @@
       <li>Batch: <%=BatchNum%></li>
       <li>Year: <%=year%></li>
       <li>Passoutyear: <%=passout%></li>
+    </ul>
+    <h2>Hobbies</h2>
+    <ul>
+      <%hobbies.forEach((hobby) => {%>
+        <li><%=hobby%></li>
+      <%})%>
     </ul>
   </body>
 </html>

@@ -11,12 +11,25 @@ app.get('/',(req,res) =>{
     res.send('Working')
 })
 
-app.get('/user-details/Surya',(req,res)=>{
-    res.render('user-details',{firstname:'Surya',BatchNum: 3,year: 2023, passout:2022})
-})
 
-app.get('/user-details/Anand',(req,res)=>{
-    res.render('user-details',{firstname:'Anand',BatchNum: 5,year: 2020, passout:2000})
+const dummyData = {
+    Surya : {BatchNum: 3,year: 2023, passout:2022, hobbies:['eat', 'sleep', 'netflix']},
+    Anand : {BatchNum: 5,year: 2020, passout:2000, hobbies:['read', 'write', 'sleep']}
+
+}
+
+
+app.get('/user-details/:username',(req,res) =>{
+    let username = req.params.username
+    userDetails = dummyData[username]
+    if(userDetails){
+        res.render('user-details',{firstname: username, BatchNum: userDetails.BatchNum, year: userDetails.year, passout: userDetails.passout, hobbies: userDetails.hobbies}
+    )
+    }
+    else{
+        res.send("User does not exist")
+    }
+    
 })
 
 
