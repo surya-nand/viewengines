@@ -14,7 +14,8 @@ app.get('/',(req,res) =>{
 
 const dummyData = {
     Surya : {BatchNum: 3,year: 2023, passout:2022, hobbies:['eat', 'sleep', 'netflix']},
-    Anand : {BatchNum: 5,year: 2020, passout:2000, hobbies:['read', 'write', 'sleep']}
+    Anand : {BatchNum: 5,year: 2020, passout:2000, hobbies:['read', 'write', 'sleep']},
+    Siddhu : {BatchNum: 10,year: 2023, passout:2028, hobbies:['Read', 'Eat', 'playing']}
 
 }
 
